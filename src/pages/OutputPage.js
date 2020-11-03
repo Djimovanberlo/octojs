@@ -28,7 +28,7 @@ const OutputPage = () => {
 
   const continentData = [
     {
-      name: "income",
+      name: "",
       userIncome: 350,
       continentIncome: 200,
     },
@@ -36,13 +36,21 @@ const OutputPage = () => {
 
   const worldData = [
     {
-      name: "income",
+      name: "",
       userIncome: 350,
-      worldIncome: 100,
+      worldIncome: 50,
     },
   ];
 
-  const [barStack, set_barStack] = useState(false);
+  const combinedData = [
+    {
+      name: "",
+      userIncome: 350,
+      countryIncome: 100,
+      continentIncome: 200,
+      worldIncome: 50,
+    },
+  ];
 
   return (
     <div className="parent">
@@ -63,34 +71,12 @@ const OutputPage = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          {!barStack ? (
-            <Bar
-              name="your monthly income"
-              dataKey="userIncome"
-              fill="#8884d8"
-            />
-          ) : (
-            <Bar
-              name="your monthly income"
-              dataKey="userIncome"
-              fill="#8884d8"
-              stackId="a"
-            />
-          )}
-          {!barStack ? (
-            <Bar
-              name={`average monthly income in ${country}`}
-              dataKey="countryIncome"
-              fill="#82ca9d"
-            />
-          ) : (
-            <Bar
-              name={`average monthly income in ${country}`}
-              dataKey="countryIncome"
-              fill="#82ca9d"
-              stackId="a"
-            />
-          )}
+          <Bar name="your monthly income" dataKey="userIncome" fill="#8884d8" />
+          <Bar
+            name={`average monthly income in ${country}`}
+            dataKey="countryIncome"
+            fill="#82ca9d"
+          />
         </BarChart>
       </div>
       {/* continent graph */}
@@ -110,34 +96,12 @@ const OutputPage = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          {!barStack ? (
-            <Bar
-              name="your monthly income"
-              dataKey="userIncome"
-              fill="#8884d8"
-            />
-          ) : (
-            <Bar
-              name="your monthly income"
-              dataKey="userIncome"
-              fill="#8884d8"
-              stackId="a"
-            />
-          )}
-          {!barStack ? (
-            <Bar
-              name={`average monthly income in ${continent}`}
-              dataKey="continentIncome"
-              fill="#82ca9d"
-            />
-          ) : (
-            <Bar
-              name={`average monthly income in ${continent}`}
-              dataKey="continentIncome"
-              fill="#82ca9d"
-              stackId="a"
-            />
-          )}
+          <Bar name="your monthly income" dataKey="userIncome" fill="#8884d8" />
+          <Bar
+            name={`average monthly income in ${continent}`}
+            dataKey="continentIncome"
+            fill="#d3d31d"
+          />
         </BarChart>
       </div>
 
@@ -158,54 +122,56 @@ const OutputPage = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-
-          {!barStack ? (
-            <Bar
-              name="your monthly income"
-              dataKey="userIncome"
-              fill="#8884d8"
-            />
-          ) : (
-            <Bar
-              name="your monthly income"
-              dataKey="userIncome"
-              fill="#8884d8"
-              stackId="a"
-            />
-          )}
-
-          {!barStack ? (
-            <Bar
-              name="average monthly income in the world"
-              dataKey="worldIncome"
-              fill="#82ca9d"
-            />
-          ) : (
-            <Bar
-              name="average monthly income in the world"
-              dataKey="worldIncome"
-              fill="#82ca9d"
-              stackId="a"
-            />
-          )}
+          <Bar name="your monthly income" dataKey="userIncome" fill="#8884d8" />
+          <Bar
+            name="average monthly income in the world"
+            dataKey="worldIncome"
+            fill="#c62a2a"
+          />
         </BarChart>
       </div>
+      {/* comboGraph */}
       <div className="div4">
-        <button
-          onClick={() => {
-            set_barStack(!barStack);
+        <BarChart
+          width={500}
+          height={300}
+          data={combinedData}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
           }}
         >
-          Stack bars
-        </button>
-        <button
-          onClick={() => {
-            console.log("HOW CAN I HELP?!??!?!?!?!?");
-          }}
-        >
-          How can I help?
-        </button>
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar name="your monthly income" dataKey="userIncome" fill="#8884d8" />
+          <Bar
+            name={`average monthly income in ${country}`}
+            dataKey="countryIncome"
+            fill="#82ca9d"
+          />
+          <Bar
+            name={`average monthly income in ${continent}`}
+            dataKey="continentIncome"
+            fill="#d3d31d"
+          />
+          <Bar
+            name="average monthly income in the world"
+            dataKey="worldIncome"
+            fill="#c62a2a"
+          />
+        </BarChart>
       </div>
+      <button
+        onClick={() => {
+          console.log("HOW CAN I HELP?!??!?!?!?!?");
+        }}
+      >
+        How can I help?
+      </button>
     </div>
   );
 };
