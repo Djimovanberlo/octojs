@@ -8,11 +8,7 @@ import Navigation from "./components/Navigation";
 
 function App() {
   return (
-    <>
-      <div>octo.js</div>
-      {/* <>Some logic (redux) to manage current page</>
-  <Navigation /> */}
-    </>
+   <InputPage />
   );
 }
 
