@@ -7,6 +7,8 @@
 
 .facts {
   position: absolute;
+  padding: 18rem;
+  font-size: 1.7rem;
 }
 
 * {
