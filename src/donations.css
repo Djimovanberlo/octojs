@@ -1,0 +1,35 @@
+.title {
+  width: 100%;
+  text-align: center;
+  left: 0.1%;
+  top: 5%;
+}
+
+.p-element {
+  width: 100%;
+  position: absolute;
+  left: 40%;
+  top: 17%;
+  font-size: 1.5em;
+}
+
+.charityList {
+  width: 50%;
+  height: auto;
+  bottom: 10px;
+  display: flex;
+  overflow-y: hidden;
+  /* add scrollbar */
+  overflow-x: scroll;
+  margin: 5px;
+  padding: 10px;
+}
+.charityList::-webkit-scrollbar {
+  display: none;
+}
+
+.charities {
+  object-fit: contain;
+  margin: 10px;
+  transition: 0.2s;
+}

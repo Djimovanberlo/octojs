@@ -1,0 +1,16 @@
+.title {
+  position: absolute;
+  left: 33%;
+  top: 7%;
+  font-size: 2rem;
+}
+
+.facts {
+  position: absolute;
+  padding: 18rem;
+  font-size: 1.7rem;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
