@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       {/* <div>octo.js</div> */}
-      <FactsPage />
-      {/* <DonationsPage /> */}
+      {/* <FactsPage /> */}
+      <DonationsPage />
       {/* <>Some logic (redux) to manage current page</>
   <Navigation /> */}
     </>
