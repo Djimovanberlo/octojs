@@ -5,12 +5,21 @@ import { BrowserRouter as Switch, Route } from "react-router-dom";
 import WelcomePage from "./pages/WelcomePage";
 import InputPage from "./pages/InputPage";
 import OutputPage from "./pages/OutputPage";
-import Navigation from "./components/Navigation";
 import FactsPage from "./pages/FactsPage";
 import DonationsPage from "./pages/DonationsPage";
 
-function App() {
-  return <div className="App">HEJ</div>;
-}
+const App = () => {
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path="/" component={WelcomePage} />
+        <Route path="/input" component={InputPage} />
+        <Route path="/output" component={OutputPage} />
+        <Route path="/facts" component={FactsPage} />
+        <Route path="/donations" component={DonationsPage} />
+      </Switch>
+    </div>
+  );
+};
 
 export default App;

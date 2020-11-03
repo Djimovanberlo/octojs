@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { NavLink } from "react-router-dom";
+
 import {
   BarChart,
   Bar,
@@ -11,8 +13,6 @@ import {
 } from "recharts";
 
 import "../styles/OutputPage.css";
-
-import SingleOutput from "../components/SingleOutput";
 
 const OutputPage = () => {
   const country = "Belgium";
@@ -165,13 +165,9 @@ const OutputPage = () => {
           />
         </BarChart>
       </div>
-      <button
-        onClick={() => {
-          console.log("HOW CAN I HELP?!??!?!?!?!?");
-        }}
-      >
-        How can I help?
-      </button>
+      <NavLink to="/input">Change input</NavLink>
+      <br />
+      <NavLink to="/facts">More info</NavLink>
     </div>
   );
 };
