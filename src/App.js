@@ -12,6 +12,7 @@ function App() {
       <div>octo.js</div>
       {/* <>Some logic (redux) to manage current page</>
   <Navigation /> */}
+      <OutputPage />
     </>
   );
 }
