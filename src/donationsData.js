@@ -12,10 +12,10 @@ const charities = [
     donateLink: "https://www.hearttoheart.org/ways-to-give/",
   },
   {
-    name: "Unops",
-    image: "https://arab.org/wp-content/uploads/2016/10/unops-150x150.png",
-    donateLink:
-      "https://www.unicef.nl/doneren?utm_source=unicef.org&utm_campaign=crosslink&utm_medium=owned&utm_term=link_unicef.org",
+    name: "Concern",
+    image:
+      "https://scontent-ams4-1.xx.fbcdn.net/v/t1.0-0/p370x247/66675592_10157466300419732_168464654757003264_o.jpg?_nc_cat=107&ccb=2&_nc_sid=85a577&_nc_ohc=wYulAvKxxvMAX9HI90U&_nc_ht=scontent-ams4-1.xx&tp=6&oh=91756d66a22d1bc9e8160fd7d049a947&oe=5FC7E8BB",
+    donateLink: "https://www.concern.net/donate",
   },
   {
     name: "Give Directly",
@@ -30,10 +30,11 @@ const charities = [
       "https://help.rescue.org/donate/refugees-facing-covid?utm_expid=.lgsYYR0KT8m655ZagTyuCw.1&utm_referrer=https%3A%2F%2Fwww.google.com%2F",
   },
   {
-    name: "SOME",
+    name: "Save the Children",
     image:
-      "https://www.some.org/application/files/9515/3746/1753/SOME-Logo-JPEG.jpg",
-    donateLink: "https://www.some.org/give",
+      "https://seeklogo.com/images/S/Save_the_Children-logo-843B0C8DF7-seeklogo.com.png",
+    donateLink:
+      "https://www.savethechildren.org/us/ways-to-help/ways-to-give/donate-childrens-charity",
   },
 ];
 

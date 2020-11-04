@@ -123,7 +123,7 @@ const OutputPage = () => {
           <div style={{ width: 250, height: 50, textAlign: "center" }}>
             <NavLink to="/input">Change input</NavLink>
             <br />
-            <NavLink to="/facts">More info</NavLink>
+            <NavLink to="/donations">More info</NavLink>
           </div>
         </div>
       </div>
