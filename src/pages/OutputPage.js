@@ -167,7 +167,7 @@ const OutputPage = () => {
       </div>
       <NavLink to="/input">Change input</NavLink>
       <br />
-      <NavLink to="/facts">More info</NavLink>
+      <NavLink to="/donations">More info</NavLink>
     </div>
   );
 };
