@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
 import highchartsMap from "highcharts/modules/map";
@@ -7,6 +8,8 @@ import mapData from "@highcharts/map-collection/custom/world.geo.json";
 import "../styles/WorldMap.css";
 // import Country from "../Game/Country";
 import { data } from "../constants/data";
+import { refreshCountry } from "../store/form/actions";
+
 highchartsMap(Highcharts);
 
 const plotOptions = {
@@ -26,7 +29,7 @@ const chart = {
     map: "world",
     backgroundColor: "#2d2d2d",
     plotBackgroundColor: "#2d2d2d",
-    height: 700,
+    height: 500,
     width: 800,
   },
   title: {
@@ -69,11 +72,18 @@ const chart = {
 };
 
 export default function WorldMap() {
-  const [country, set_Country] = useState("");
-  console.log("THIS COUNTRY", country);
+  // const [country, set_Country] = useState("");
+  // console.log("THIS COUNTRY", country);
+
+  const dispatch = useDispatch();
+
+  const sumbitCountry = (country) => {
+    dispatch(refreshCountry(country));
+  };
 
   chart.plotOptions["series"]["point"]["events"]["click"] = (event) => {
-    set_Country(event.point["hc-key"].toUpperCase());
+    // set_Country(event.point["hc-key"].toUpperCase());
+    sumbitCountry(event.point["hc-key"]);
   };
 
   //   if (category === "country") {
