@@ -1,24 +1,25 @@
-.App {
-  margin-top: 10;
-  margin-bottom: 10;
-  margin-right: 10;
-  margin-left: 10;
-}
-
-.color1 {
-  color: #f4a64f;
-}
-
-.color2 {
-  color: #8bba15;
-}
-
-.color3 {
-  color: #00acc2;
-}
-
 * {
+  background: #1b3150;
+  color: white;
+}
+
+button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.3em;
   box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+button:hover {
+  color: #1b3150;
+  background-color: #ffffff;
 }
 
 .divIn {
@@ -100,4 +101,4 @@
     -webkit-transform: translateZ(0) translateX(0);
     transform: translateZ(0) translateX(0);
   }
-}
+} */
