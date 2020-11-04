@@ -31,6 +31,9 @@ const InputPage = () => {
         onChange={(event) => setSelectedLocation(event.target.value)}
         className="select"
       >
+        <option value="" selected disabled hidden>
+          Select your country
+        </option>
         {income
           .sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0))
           .map((country, index) => {

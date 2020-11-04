@@ -218,7 +218,7 @@ export const income = [
   },
   {
     name: "China",
-    code: "ch",
+    code: "cn",
     income: 868,
   },
   {
