@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import {
@@ -15,8 +15,8 @@ import {
 import "../styles/OutputPage.css";
 
 const OutputPage = () => {
+  const [viewSources, set_viewSources] = useState(false);
   const country = "Belgium";
-  const continent = "Europe";
 
   const countryData = [
     {
@@ -26,29 +26,11 @@ const OutputPage = () => {
     },
   ];
 
-  const continentData = [
-    {
-      name: "",
-      userIncome: 350,
-      continentIncome: 200,
-    },
-  ];
-
   const worldData = [
     {
       name: "",
       userIncome: 350,
-      worldIncome: 50,
-    },
-  ];
-
-  const combinedData = [
-    {
-      name: "",
-      userIncome: 350,
-      countryIncome: 100,
-      continentIncome: 200,
-      worldIncome: 50,
+      worldIncome: Math.round(2920 / 12),
     },
   ];
 
@@ -71,42 +53,17 @@ const OutputPage = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar name="your monthly income" dataKey="userIncome" fill="#8884d8" />
+          <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
             name={`average monthly income in ${country}`}
             dataKey="countryIncome"
-            fill="#82ca9d"
-          />
-        </BarChart>
-      </div>
-      {/* continent graph */}
-      <div className="div2">
-        <BarChart
-          width={500}
-          height={300}
-          data={continentData}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar name="your monthly income" dataKey="userIncome" fill="#8884d8" />
-          <Bar
-            name={`average monthly income in ${continent}`}
-            dataKey="continentIncome"
-            fill="#d3d31d"
+            fill="#8bba15"
           />
         </BarChart>
       </div>
 
       {/* worldgraph */}
-      <div className="div3">
+      <div className="div2">
         <BarChart
           width={500}
           height={300}
@@ -122,52 +79,54 @@ const OutputPage = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar name="your monthly income" dataKey="userIncome" fill="#8884d8" />
+          <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
             name="average monthly income in the world"
             dataKey="worldIncome"
-            fill="#c62a2a"
+            fill="#00acc2"
           />
         </BarChart>
       </div>
-      {/* comboGraph */}
-      <div className="div4">
-        <BarChart
-          width={500}
-          height={300}
-          data={combinedData}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
+      <div>
+        <div
+          onMouseEnter={() => {
+            set_viewSources(true);
           }}
+          onMouseLeave={() => {
+            set_viewSources(false);
+          }}
+          style={{ height: 10, width: 10 }}
         >
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar name="your monthly income" dataKey="userIncome" fill="#8884d8" />
-          <Bar
-            name={`average monthly income in ${country}`}
-            dataKey="countryIncome"
-            fill="#82ca9d"
-          />
-          <Bar
-            name={`average monthly income in ${continent}`}
-            dataKey="continentIncome"
-            fill="#d3d31d"
-          />
-          <Bar
-            name="average monthly income in the world"
-            dataKey="worldIncome"
-            fill="#c62a2a"
-          />
-        </BarChart>
+          <div style={{ width: 250, height: 50, textAlign: "center" }}>
+            {viewSources ? (
+              <div>
+                <a
+                  href="https://www.worlddata.info/average-income.php"
+                  target="_blank"
+                  style={{ cursor: "pointer" }}
+                >
+                  average income per country
+                </a>
+                <br />
+                <a
+                  href="https://news.gallup.com/poll/166211/worldwide-median-household-income-000.aspx"
+                  target="_blank"
+                  style={{ cursor: "pointer" }}
+                >
+                  average income in the world
+                </a>
+              </div>
+            ) : (
+              <div>View sources</div>
+            )}
+          </div>
+          <div style={{ width: 250, height: 50, textAlign: "center" }}>
+            <NavLink to="/input">Change input</NavLink>
+            <br />
+            <NavLink to="/facts">More info</NavLink>
+          </div>
+        </div>
       </div>
-      <NavLink to="/input">Change input</NavLink>
-      <br />
-      <NavLink to="/facts">More info</NavLink>
     </div>
   );
 };
