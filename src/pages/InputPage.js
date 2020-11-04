@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { useState } from "react";
 
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 import { postUserInput } from "../store/form/actions";
-import { useHistory, NavLink } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 
 const InputPage = () => {
   const dispatch = useDispatch();
@@ -19,13 +19,15 @@ const InputPage = () => {
   function submitHandler(event) {
     console.log("Submitted")
     dispatch(postUserInput({selectedLocation, monthlyIncome, meatIntake, useOfPlastic, useOfVehicle}));
+
     // history.push("/output")
   }
 
   //background for the slides <a href="https://www.freepik.com/vectors/tree">Tree vector created by pch.vector - www.freepik.com</a>
 
   return (
-    <div>
+
+    <div class="divIn">
   <h1>Please fill in the form</h1>
 <br></br>
 <h2>What country are you from?</h2>
@@ -81,8 +83,9 @@ const InputPage = () => {
   <button onClick={submitHandler}>Submit</button>
   {/* <button onClick={history.push("/")}>Back to start</button> */}
       <br />
-  </div>
-    )
+      <NavLink to="/output">GO TO OUPUT</NavLink>
+    </div>
+  );
 };
 
 export default InputPage;

@@ -21,6 +21,7 @@
   grid-area: 2 / 5 / 3 / 6;
 }
 .donation_div4 {
+  position: relative;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
@@ -28,10 +29,23 @@
 }
 
 .donation_div4 img {
+  /* display: block; */
+  opacity: 0.9;
   padding: 10px;
   width: 250px;
   height: 250px;
   object-fit: cover;
+}
+
+/* .donation_div4 p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+
+.donation_div4 img:hover {
+  transform: scale(1.1);
 }
 
 .donation_div4 {

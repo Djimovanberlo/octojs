@@ -1,5 +1,4 @@
 import React from "react";
-
 import Donations from "../components/Donations";
 import "../styles/Donations.css";
 import charities from "../donationsData";
