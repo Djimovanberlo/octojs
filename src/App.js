@@ -18,7 +18,6 @@ const App = () => {
         <Route path="/facts" component={FactsPage} />
         <Route path="/donations" component={DonationsPage} />
       </Switch>
-    </div>
   );
 };
 
