@@ -22,7 +22,6 @@ const Graphs = () => {
   const { selectedLocation, monthlyIncome, countryIncome } = useSelector(
     selectLocationIncome
   );
-  console.log("SELECTED:", selectedLocation, monthlyIncome, countryIncome);
 
   const [viewSources, set_viewSources] = useState(false);
   const [location, set_location] = useState(selectedLocation);
@@ -96,6 +95,9 @@ const Graphs = () => {
           />
         </BarChart>
       </div>
+      {!countryIncome ? (
+        <div>Sorry, it apears we do not have data for that country</div>
+      ) : null}
       <div>
         <div
           onMouseEnter={() => {

@@ -14,9 +14,20 @@ export default (state = initialState, action) => {
         return countryData.name === action.payload.selectedLocation;
       });
       return { ...state, ...action.payload, countryIncome: foundIncome.income };
+
     case REFRESH_COUNTRY:
-      console.log("FRESHLY STORED", action.payload);
-      return { ...state, selectedLocation: action.payload };
+      const foundCountry = income.find((country) => {
+        return country.code === action.payload;
+      });
+      // foundCountry
+      return foundCountry
+        ? {
+            ...state,
+            selectedLocation: foundCountry.name,
+            countryIncome: foundCountry.income,
+          }
+        : { ...state, countryIncome: null };
+
     default:
       return state;
   }
