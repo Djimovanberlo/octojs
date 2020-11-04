@@ -1,9 +1,12 @@
-const initialstate = [];
+import { POST_LOCATION } from "./actions";
 
-export default (state = initialstate, action) => {
+const initialState = [];
+
+export default (state = initialState, action) => {
   switch (action.type) {
-    case "TEMPORARY":
-      return [];
+    case POST_LOCATION:
+      return { ...state, ...action.payload };
+
     default:
       return state;
   }

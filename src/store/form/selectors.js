@@ -1,0 +1,1 @@
+export const selectPostedlocation = state => state.location
