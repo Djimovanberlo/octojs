@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { postUserInput } from "../store/form/actions";
 import { useHistory, NavLink } from "react-router-dom";
 
+import { income } from "../constants/Income";
+
 const InputPage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -29,12 +31,15 @@ const InputPage = () => {
         onChange={(event) => setSelectedLocation(event.target.value)}
         className="select"
       >
-        <option value="Belgium">Belgium</option>
-        <option value="Netherlands">Netherlands</option>
-        <option value="Russia">Russia</option>
-        <option value="Germany">Germany</option>
-        <option value="France">France</option>
-        <option value="US">US</option>
+        {income
+          .sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0))
+          .map((country, index) => {
+            return (
+              <option key={index} value={country.name}>
+                {country.name}
+              </option>
+            );
+          })}
       </select>
       <h2>What is your monthly income?</h2>
       <input
