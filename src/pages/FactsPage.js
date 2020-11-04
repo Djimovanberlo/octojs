@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../facts.css";
 
 export default function FactsPage() {
@@ -30,6 +31,11 @@ export default function FactsPage() {
           risk.
         </li>
       </ul>
+      <div style={{ position: "absolute", top: 850, left: 200 }}>
+        <NavLink to="/output">Go back</NavLink>
+        <br />
+        <NavLink to="/donations">How can I help?</NavLink>
+      </div>
     </div>
   );
 }

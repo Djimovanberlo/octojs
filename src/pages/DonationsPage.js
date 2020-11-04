@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+
 import Donations from "../components/Donations";
 import "../donations.css";
 
@@ -18,7 +20,13 @@ function DonationsPage() {
       </div>
       <div></div>
       <Donations className="donation_div3" images={images} />
+          <div style={{ position: "absolute", top: 850, left: 200 }}>
+        <NavLink to="/facts">Go back</NavLink>
+        <br />
+        <NavLink to="/">Do the thing again</NavLink>
+      </div>
     </div>
+</>
   );
 }
 
