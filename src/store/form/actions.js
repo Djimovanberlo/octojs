@@ -1,6 +1,7 @@
-export const POST_LOCATION = 'POST_LOCATION';
+export const POST_USERINPUT = 'POST_URSERINPUT';
 
-export const postlocation = (location) => ({
-  type: POST_LOCATION,
-  payload: location
+export const postUserInput = (x) => (
+  {
+  type: POST_USERINPUT,
+  payload: x
 })

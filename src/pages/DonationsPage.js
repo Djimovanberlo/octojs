@@ -26,7 +26,7 @@ function DonationsPage() {
         <NavLink to="/">Do the thing again</NavLink>
       </div>
     </div>
-</>
+
   );
 }
 

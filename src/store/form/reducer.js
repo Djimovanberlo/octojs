@@ -1,13 +1,16 @@
-import { POST_LOCATION } from "./actions";
+import { POST_USERINPUT } from "./actions";
 
-const initialState = [];
+const initialState = null;
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case POST_LOCATION:
+    case POST_USERINPUT:
+      console.log(action.payload)
       return { ...state, ...action.payload };
 
     default:
       return state;
   }
 };
+
+

@@ -1,7 +1,6 @@
-import { configureStore } from "@reduxjs/toolkit";
-export default configureStore({
-  reducer: {
-    // page: pageReducer,
-    // form: formReducer
-  },
+import { combineReducers } from "redux";
+import form from "./form/reducer"
+
+export default combineReducers({
+    form,
 });

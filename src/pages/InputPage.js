@@ -1,15 +1,22 @@
 import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { useState } from "react";
+import {useDispatch} from "react-redux"
+import { postUserInput } from "../store/form/actions";
+import { useHistory, NavLink } from "react-router-dom";
 
 
 const InputPage = () => {
-
+  const dispatch = useDispatch();
+  const history = useHistory();
   const [selectedLocation, setSelectedLocation] = useState("");
-  const [household, setSelectedHousehold] = useState("");
   const [monthlyIncome, setSelectedMonthlyIncome] = useState("");
-  const [rent, setSelectedRent] = useState("");
-  const [selectedStocks, setSelectedStocks] = useState("");
+
+  function submitHandler(event) {
+    console.log("Submitted")
+    dispatch(postUserInput({selectedLocation, monthlyIncome}));
+    // history.push("/output")
+  }
 
     return (
     <div>
@@ -28,20 +35,13 @@ const InputPage = () => {
    <option value = "France">France</option>
    <option value = "US">US</option>
   </select>
-  <h2>How many adults are in your household?</h2>
-  <input type= "number" onChange={(event) => setSelectedHousehold(event.target.value)}></input>
   <h2>What is your monthly income?</h2>
   <input type= "number" onChange={(event) => setSelectedMonthlyIncome(event.target.value)}></input>
-  <h2>If you own a house how much would you be able to rent it for</h2>
-  <input type= "number" onChange={(event) => setSelectedRent(event.target.value)}></input>
-  <h2>If you own stocks, how much would their value be?</h2>
-  <input type= "number"onChange={(event) => setSelectedStocks(event.target.value)}></input>
+ <br></br>
 <br></br>
-<br></br>
-  <button>Submit</button>
-        <NavLink to="/">Back to start</NavLink>
+  <button onClick={submitHandler}>Submit</button>
+  {/* <button onClick={history.push("/")}>Back to start</button> */}
       <br />
-      <NavLink to="/output">Calculate</NavLink>
   </div>
     
     )
