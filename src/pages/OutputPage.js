@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import WorldMap from "./WorldMap";
 import { selectLocationIncome } from "../store/form/selectors";
 
 import {
@@ -18,10 +19,11 @@ import {
 import "../styles/OutputPage.css";
 
 const OutputPage = () => {
-  const [viewSources, set_viewSources] = useState(false);
-
   const { selectedLocation, monthlyIncome } = useSelector(selectLocationIncome);
   console.log("SELECTED:", selectedLocation, monthlyIncome);
+
+  const [viewSources, set_viewSources] = useState(false);
+  const [location, set_location] = useState(selectedLocation);
 
   const countryData = [
     {
@@ -60,7 +62,7 @@ const OutputPage = () => {
           <Legend />
           <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
-            name={`average monthly income in ${selectedLocation}`}
+            name={`average monthly income in ${location}`}
             dataKey="countryIncome"
             fill="#8bba15"
           />
@@ -102,6 +104,7 @@ const OutputPage = () => {
           }}
           style={{ height: 10, width: 10 }}
         >
+          <WorldMap />
           <div style={{ width: 250, height: 50, textAlign: "center" }}>
             {viewSources ? (
               <div>
