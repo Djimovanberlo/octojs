@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import {useDispatch} from "react-redux"
 import { postUserInput } from "../store/form/actions";
-import { useHistory, NavLink } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 
 const InputPage = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const InputPage = () => {
   }
 
   return (
-    <div>
+    <div class="divIn">
   <h1>Please fill in the form</h1>
 <br></br>
 <h2>What country are you from?</h2>
