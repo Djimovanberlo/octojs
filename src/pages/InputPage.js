@@ -20,7 +20,7 @@ const InputPage = () => {
   }
 
   return (
-    <div class="divIn">
+    <div className="divIn">
       <h1>Please fill in the form</h1>
       <br></br>
       <h2>What country are you from?</h2>
