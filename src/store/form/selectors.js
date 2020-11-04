@@ -1,3 +1,3 @@
-export const selectName = state => state.name
+export const selectLocationIncome = (state) => state.form;
 
-export const selectIncome = state => state.income
+export const selectIncome = (state) => state.income;

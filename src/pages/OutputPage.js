@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import { selectLocationIncome } from "../store/form/selectors";
 
 import {
   BarChart,
@@ -16,12 +19,14 @@ import "../styles/OutputPage.css";
 
 const OutputPage = () => {
   const [viewSources, set_viewSources] = useState(false);
-  const country = "Belgium";
+
+  const { selectedLocation, monthlyIncome } = useSelector(selectLocationIncome);
+  console.log("SELECTED:", selectedLocation, monthlyIncome);
 
   const countryData = [
     {
       name: "",
-      userIncome: 350,
+      userIncome: monthlyIncome,
       countryIncome: 100,
     },
   ];
@@ -29,7 +34,7 @@ const OutputPage = () => {
   const worldData = [
     {
       name: "",
-      userIncome: 350,
+      userIncome: monthlyIncome,
       worldIncome: Math.round(2920 / 12),
     },
   ];
@@ -55,7 +60,7 @@ const OutputPage = () => {
           <Legend />
           <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
-            name={`average monthly income in ${country}`}
+            name={`average monthly income in ${selectedLocation}`}
             dataKey="countryIncome"
             fill="#8bba15"
           />
@@ -123,7 +128,7 @@ const OutputPage = () => {
           <div style={{ width: 250, height: 50, textAlign: "center" }}>
             <NavLink to="/input">Change input</NavLink>
             <br />
-            <NavLink to="/facts">More info</NavLink>
+            <NavLink to="/donations">More info</NavLink>
           </div>
         </div>
       </div>

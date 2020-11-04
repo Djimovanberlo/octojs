@@ -46,6 +46,7 @@ const InputPage = () => {
       <button onClick={submitHandler}>Submit</button>
       {/* <button onClick={history.push("/")}>Back to start</button> */}
       <br />
+      <NavLink to="/output">GO TO OUPUT</NavLink>
     </div>
   );
 };
