@@ -1,9 +1,8 @@
 import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 import { postUserInput } from "../store/form/actions";
 import { useHistory} from "react-router-dom";
 
@@ -15,12 +14,13 @@ const InputPage = () => {
   const [monthlyIncome, setSelectedMonthlyIncome] = useState("");
 
   function submitHandler(event) {
-    console.log("Submitted")
-    dispatch(postUserInput({selectedLocation, monthlyIncome}));
+    console.log("Submitted");
+    dispatch(postUserInput({ selectedLocation, monthlyIncome }));
     // history.push("/output")
   }
 
   return (
+
     <div class="divIn">
   <h1>Please fill in the form</h1>
 <br></br>
@@ -44,8 +44,9 @@ const InputPage = () => {
   <button onClick={submitHandler}>Submit</button>
   {/* <button onClick={history.push("/")}>Back to start</button> */}
       <br />
-  </div>
-    )
+      <NavLink to="/output">GO TO OUPUT</NavLink>
+    </div>
+  );
 };
 
 export default InputPage;
