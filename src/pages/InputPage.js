@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+
 import {useDispatch} from "react-redux"
 import { postUserInput } from "../store/form/actions";
 import { useHistory, NavLink } from "react-router-dom";
@@ -9,6 +10,7 @@ import { useHistory, NavLink } from "react-router-dom";
 const InputPage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+
   const [selectedLocation, setSelectedLocation] = useState("");
   const [monthlyIncome, setSelectedMonthlyIncome] = useState("");
 

@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Donations(props) {
   return (
-    <div>
-      {props.images.map((image) => {
-        return <img src={image} alt="who" />;
+    <>
+      {props.charities.map((charity) => {
+        return (
+          <a href={charity.donateLink} key={charity.name}>
+            <img src={charity.image} />
+          </a>
+        );
       })}
-   </div>
+   </>
   );
 }
 
