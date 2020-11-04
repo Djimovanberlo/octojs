@@ -6,7 +6,7 @@ import mapData from "@highcharts/map-collection/custom/world.geo.json";
 // import * as Exporting from "highcharts/modules/exporting";
 import "../styles/WorldMap.css";
 // import Country from "../Game/Country";
-import { data } from "./data";
+import { data } from "../constants/data";
 highchartsMap(Highcharts);
 
 const plotOptions = {
@@ -61,7 +61,7 @@ const chart = {
       states: {
         backgroundColor: "transparent",
         hover: {
-          color: "red",
+          color: "#00acc2",
         },
       },
     },
@@ -69,24 +69,25 @@ const chart = {
 };
 
 export default function WorldMap() {
-  const [country, setCountry] = useState("");
+  const [country, set_Country] = useState("");
+  console.log("THIS COUNTRY", country);
 
   chart.plotOptions["series"]["point"]["events"]["click"] = (event) => {
-    setCountry(event.point["hc-key"].toUpperCase());
+    set_Country(event.point["hc-key"].toUpperCase());
   };
 
   //   if (category === "country") {
   //     chart.tooltip["enabled"] = false;
   //   }
 
-  const [options, setOptions] = useState(chart);
+  //   const [options, setOptions] = useState(chart);
 
   return (
     <div id="container">
       {/* <Country clickedCountry={country} category={category} /> */}
       <HighchartsReact
         highcharts={Highcharts}
-        options={options}
+        options={chart}
         constructorType={"mapChart"}
       />
     </div>
