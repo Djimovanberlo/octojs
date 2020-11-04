@@ -194,65 +194,121 @@
 //     income: 761
 //     },
 //     {
-//         name: "Thailand",
-//         income: 605
-//         },
-//         {
-//             name: "Serbia",
-//             income: 585
-//             },
-//             {
-//                 name: "Peru",
-//                 income: 562
-//                 },
-//                 {
-//                     name: "Colombia",
-//                     income: 543
-//                     },
-//                     {
-//                         name: "Equatorial Guinea",
-//                         income: 538
-//                         },
-//                         {
-//                             name: "Belarus",
-//                             income: 523
-//                             },
-//                             {
-//                                 name: "Ecuador",
-//                                 income: 507
-//                                 },
-//                                 {
-//                                     name: "South Africa",
-//                                     income: 503
-//                                     },
-//                                     {
-//                                         name: "Iran",
-//                                         income: 452
-//                                         },
-//                                         {
-//                                             name: "Albania",
-//                                             income: 437
-//                                             },
-//                                             {
-//                                                 name: "Indonesia",
-//                                                 income: 338
-//                                                 },
-//                                                 {
-//                                                     name: "Philippines",
-//                                                     income: 321
-//                                                     },
-//                                                     {
-//                                                         name: "Bolivia",
-//                                                         income: 294
-//                                                         },
-//                                                         {
-//                                                             name: "Ukraine",
-//                                                             income: 281
-//                                                             },
-//                                                             {
-//                                                                 name: "Malaysia",
-//                                                                 income: 933
-//                                                                 },
-    
+//     name: "Thailand",
+//     income: 605
+//     },
+//     {
+//     name: "Serbia",
+//     income: 585
+//     },
+//     {
+//     name: "Peru",
+//     income: 562
+//     },
+//     {
+//     name: "Colombia",
+//     income: 543
+//     },
+//     {
+//     name: "Equatorial Guinea",
+//     income: 538
+//     },
+//     {
+//     name: "Belarus",
+//     income: 523
+//     },
+//     {
+//     name: "Ecuador",
+//     income: 507
+//     },
+//     {
+//     name: "South Africa",
+//     income: 503
+//     },
+//     {
+//     name: "Iran",
+//     income: 452
+//     },
+//     {
+//     name: "Albania",
+//     income: 437
+//     },
+//     {
+//     name: "Indonesia",
+//     income: 338
+//     },
+//     {
+//     name: "Philippines",
+//     income: 321
+//     },
+//     {
+//     name: "Bolivia",
+//     income: 294
+//     },
+//     {
+//     name: "Ukraine",
+//     income: 281
+//     },
+//     {
+//     name: "Morocco",
+//     income: 266
+//     },
+//     {
+//     name: "Egypt",
+//     income: 224
+//     },
+//     {
+//     name: "Laos",
+//     income: 214
+//     },
+//     {
+//     name: "Vietnam",
+//     income: 212
+//     },
+//     {
+//     name: "India",
+//     income: 178
+//     },
+//     {
+//     name: "Nigeria",
+//     income: 169
+//     },
+//     {
+//     name: "Bangladesh",
+//     income: 162
+//     },
+//     {
+//     name: "Kenya",
+//     income: 146
+//     },
+//     {
+//     name: "Pakistan",
+//     income: 128
+//     },
+//     {
+//     name: "Cameroon",
+//     income: 125
+//     },
+//     {
+//     name: "Cambodia",
+//     income: 123
+//     },
+//     {
+//     name: "Ethiopia",
+//     income: 71
+//     },
+//     {
+//     name: "Sudan",
+//     income: 49
+//     },
+//     {
+//     name: "Afghanistan",
+//     income: 45
+//     },
+//     {
+//     name: "Congo",
+//     income: 43
+// },
+
 
 // ]
