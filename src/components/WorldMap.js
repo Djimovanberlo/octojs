@@ -27,8 +27,8 @@ let tooltip = { enabled: true };
 const chart = {
   chart: {
     map: "world",
-    backgroundColor: "#2d2d2d",
-    plotBackgroundColor: "#2d2d2d",
+    backgroundColor: "#1b3150",
+    plotBackgroundColor: "#1b3150",
     height: 500,
     width: 800,
   },

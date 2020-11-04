@@ -56,9 +56,9 @@ const Graphs = () => {
             bottom: 5,
           }}
         >
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
+          <XAxis stroke="white" dataKey="name" />
+          <YAxis stroke="white" />
+          <Tooltip cursor={{ fill: "#1b3150" }} />
           <Legend />
           <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
@@ -82,9 +82,9 @@ const Graphs = () => {
             bottom: 5,
           }}
         >
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
+          <XAxis stroke="white" dataKey="name" />
+          <YAxis stroke="white" />
+          <Tooltip cursor={{ fill: "#1b3150" }} />
           <Legend />
           <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
