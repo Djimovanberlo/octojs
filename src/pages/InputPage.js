@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { useState } from "react";
 
 
@@ -38,6 +39,9 @@ const InputPage = () => {
 <br></br>
 <br></br>
   <button>Submit</button>
+        <NavLink to="/">Back to start</NavLink>
+      <br />
+      <NavLink to="/output">Calculate</NavLink>
   </div>
     
     )
