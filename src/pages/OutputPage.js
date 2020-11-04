@@ -30,7 +30,7 @@ const OutputPage = () => {
     {
       name: "",
       userIncome: 350,
-      worldIncome: 50,
+      worldIncome: Math.round(2920 / 12),
     },
   ];
 
@@ -53,11 +53,11 @@ const OutputPage = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar name="your monthly income" dataKey="userIncome" fill="#8884d8" />
+          <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
             name={`average monthly income in ${country}`}
             dataKey="countryIncome"
-            fill="#82ca9d"
+            fill="#8bba15"
           />
         </BarChart>
       </div>
@@ -79,39 +79,53 @@ const OutputPage = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar name="your monthly income" dataKey="userIncome" fill="#8884d8" />
+          <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
             name="average monthly income in the world"
             dataKey="worldIncome"
-            fill="#c62a2a"
+            fill="#00acc2"
           />
         </BarChart>
       </div>
-      <NavLink to="/input">Change input</NavLink>
-      <br />
-      <NavLink to="/facts">More info</NavLink>
-      <div
-        onMouseEnter={() => {
-          set_viewSources(true);
-        }}
-        onMouseLeave={() => {
-          set_viewSources(false);
-        }}
-        style={{ height: 10, width: 10 }}
-      >
-        {viewSources ? (
-          <div>
-            <a
-              href="https://www.worlddata.info/average-income.php"
-              target="_blank"
-              style={{ cursor: "pointer" }}
-            >
-              income per country
-            </a>
+      <div>
+        <div
+          onMouseEnter={() => {
+            set_viewSources(true);
+          }}
+          onMouseLeave={() => {
+            set_viewSources(false);
+          }}
+          style={{ height: 10, width: 10 }}
+        >
+          <div style={{ width: 250, height: 50, textAlign: "center" }}>
+            {viewSources ? (
+              <div>
+                <a
+                  href="https://www.worlddata.info/average-income.php"
+                  target="_blank"
+                  style={{ cursor: "pointer" }}
+                >
+                  average income per country
+                </a>
+                <br />
+                <a
+                  href="https://news.gallup.com/poll/166211/worldwide-median-household-income-000.aspx"
+                  target="_blank"
+                  style={{ cursor: "pointer" }}
+                >
+                  average income in the world
+                </a>
+              </div>
+            ) : (
+              <div>View sources</div>
+            )}
           </div>
-        ) : (
-          <div>DOEI</div>
-        )}
+          <div style={{ width: 250, height: 50, textAlign: "center" }}>
+            <NavLink to="/input">Change input</NavLink>
+            <br />
+            <NavLink to="/facts">More info</NavLink>
+          </div>
+        </div>
       </div>
     </div>
   );
