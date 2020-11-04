@@ -1,35 +1,24 @@
-.title {
-  width: 100%;
+.donation_parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.donation_parent h1 {
+  font-size: 2rem;
   text-align: center;
-  left: 0.1%;
-  top: 5%;
 }
 
-.p-element {
-  width: 100%;
-  position: absolute;
-  left: 40%;
-  top: 17%;
-  font-size: 1.5em;
+.donation_parent p {
+  font-size: 1.2rem;
+  text-align: center;
 }
 
-.charityList {
-  width: 50%;
-  height: auto;
-  bottom: 10px;
-  display: flex;
-  overflow-y: hidden;
-  /* add scrollbar */
-  overflow-x: scroll;
-  margin: 5px;
-  padding: 10px;
-}
-.charityList::-webkit-scrollbar {
-  display: none;
+.donation_div3 {
+  justify-content: center;
+  border: green;
 }
 
-.charities {
-  object-fit: contain;
-  margin: 10px;
-  transition: 0.2s;
+.donation_div3:hover {
+  cursor: pointer;
 }

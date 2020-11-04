@@ -3,11 +3,11 @@ import "../facts.css";
 
 export default function FactsPage() {
   return (
-    <div>
-      <div className="title">
+    <div className="fact_parent">
+      <div className="fact_div1">
         <h1>World poverty Facts</h1>
       </div>
-      <ul className="facts">
+      <ul className="fact_div2">
         <li style={{ padding: "1em" }}>
           689 million people living on less than $1.90 a day. At higher poverty
           lines, 24.1 percent of the world lived on less than $3.20 a day and

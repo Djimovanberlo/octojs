@@ -9,15 +9,19 @@ import FactsPage from "./pages/FactsPage";
 import DonationsPage from "./pages/DonationsPage";
 
 function App() {
-  return (<>
-   <InputPage />
+  return (
+    <>
+      {/* <InputPage /> */}
 
       {/* <div>octo.js</div> */}
       {/* <FactsPage /> */}
-      <DonationsPage />
+      {/* <DonationsPage /> */}
       {/* <>Some logic (redux) to manage current page</>
   <Navigation /> */}
-      <OutputPage />
+
+      {/* <OutputPage /> */}
+      <FactsPage />
+      <DonationsPage />
     </>
   );
 }

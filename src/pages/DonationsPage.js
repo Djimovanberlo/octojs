@@ -6,21 +6,19 @@ function DonationsPage() {
   const images = [
     "https://affordableartfair.com/media/wysiwyg/whats-on/amsterdam/WarChild.jpg",
     "https://www.hearttoheart.org/wp-content/uploads/2014/06/HeartToHeart_APPICON_White-011.jpg",
-    "https://charitywallet.nl/wp-content/uploads/2015/09/Unicef-Nederland-Logo-CharityWallet.jpg",
+    "https://humanityhouse.org/wp-content/uploads/2014/08/unicef-logo.jpg",
   ];
 
   return (
-    <>
-      <header>
-        <div className="title">
-          <h1>Donate </h1>
-        </div>
-        <div className="p-element">
-          <p>to make the world a better place</p>
-        </div>
-      </header>
-      <Donations images={images} />
-    </>
+    <div className="donation_parent">
+      <div></div>
+      <div>
+        <h1>Donate</h1>
+        <p>and help the world</p>
+      </div>
+      <div></div>
+      <Donations className="donation_div3" images={images} />
+    </div>
   );
 }
 
