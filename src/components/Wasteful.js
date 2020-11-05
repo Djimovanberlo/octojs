@@ -9,6 +9,7 @@ function WasteInfo() {
     const [location, set_location] = useState(selectedLocation);
 
   return (
+    <div className="wasteful_parent">
     <div
       onMouseEnter={() => {
         set_viewSources(true);
@@ -47,7 +48,6 @@ function WasteInfo() {
         <NavLink to="/donations">More info</NavLink>
       </div>
     </div>
-    <div className="wasteful_parent">
       <div className="wasteful_div1">
         <h1>Animal-based food facts</h1>
       </div>
@@ -119,6 +119,7 @@ function WasteInfo() {
       <div className="wasteful_div5">
         <h1> Polution facts</h1>
       </div>
+      <div>
       <ul className="wasteful_div6">
         <li style={{ padding: "1em" }}>
         Cars consume a lot of energy before they ever make it to the open road. 
@@ -139,6 +140,7 @@ function WasteInfo() {
         of grain and reduce pressure on land.” 
         </li>
       </ul>
+    </div>
     </div>
   );
 }
