@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { useState } from "react";
+import { NavLink } from 'react-router-dom'
 
 import { useDispatch } from "react-redux";
 import { postUserInput } from "../store/form/actions";
@@ -27,7 +28,7 @@ const InputPage = () => {
 
   return (
 
-    <div class="divIn">
+    <div class="fromLeft">
   <h1>Please fill in the form</h1>
 <br></br>
 <h2>What country are you from?</h2>
@@ -80,10 +81,10 @@ const InputPage = () => {
   </select>
 <br></br>
 <br></br>
-  <button onClick={submitHandler}>Submit</button>
+ 
   {/* <button onClick={history.push("/")}>Back to start</button> */}
       <br />
-      <NavLink to="/output">GO TO OUPUT</NavLink>
+      <NavLink to="/output"> <button onClick={submitHandler}>Submit</button></NavLink>
     </div>
   );
 };

@@ -9,10 +9,10 @@ import "../styles/OutputPage.css";
 const OutputPage = () => {
 
   return (
-    <>
+    <div class="fromDown">
       <Graphs />
       <WorldMap />
-    </>
+    </div>
   );
 };
 
