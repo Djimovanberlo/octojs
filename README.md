@@ -23,6 +23,10 @@ Note that the data for income around the world we use might not be accurate. Con
 
 <p>&nbsp;</p>
 
+### Note
+
+Note that the data we use for income around the world may not be accurate
+
 ### ---Standard React README below---
 
 In the project directory, you can run:
