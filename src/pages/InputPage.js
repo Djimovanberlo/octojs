@@ -4,11 +4,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postUserInput } from "../store/form/actions";
 import { NavLink } from "react-router-dom";
-
 import { income } from "../constants/Income";
 
 const InputPage = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+  var filledIn = false
 
   const [selectedLocation, setSelectedLocation] = useState("");
   const [monthlyIncome, setSelectedMonthlyIncome] = useState("");
@@ -16,31 +17,19 @@ const InputPage = () => {
   const [useOfPlastic, setSelectedUseOfPlastic] = useState("");
   const [useOfVehicle, setSelectedUseOfVehicles] = useState("");
 
+  if(selectedLocation !="" & monthlyIncome !="" & meatIntake !="" & useOfPlastic !="" & useOfVehicle !="") {
+    filledIn =true
+  }
+  
   function submitHandler(event) {
-    console.log("Submitted");
-    dispatch(
-      postUserInput({
-        selectedLocation,
-        monthlyIncome,
-        meatIntake,
-        useOfPlastic,
-        useOfVehicle,
-      })
-    );
+    dispatch(postUserInput({selectedLocation, monthlyIncome, meatIntake, useOfPlastic, useOfVehicle}));
   }
 
-  //background for the slides <a href="https://www.freepik.com/vectors/tree">Tree vector created by pch.vector - www.freepik.com</a>
-
   return (
-    <div className="divIn">
-      <h1>Please fill in the form</h1>
-      <br></br>
-      <h2>What country are you from?</h2>
-
-      <div class="fromLeft">
-        <h1>Please fill in the form</h1>
-        <br></br>
-        <h2>What country are you from?</h2>
+    <div className="fromLeft">
+  <h1>Please fill in the form</h1>
+<br></br>
+<h2>What country are you from?</h2>
         <select
           onChange={(event) => setSelectedLocation(event.target.value)}
           className="select"
@@ -100,27 +89,18 @@ const InputPage = () => {
           onChange={(event) => setSelectedUseOfVehicles(event.target.value)}
           className="select"
         >
-          <option value="--">--</option>
-          <option value="High">By car or another motor vehicle</option>
-          <option value="Medium">
-            When traveling short distances I try to use a bike or I will walk
-          </option>
-          <option value="FairlyLow">
-            I don't own a motor vehicle, so I use the train, bus or bycicle
-          </option>
-          <option value="FLow">I always walk or use a bike</option>
-        </select>
-        <br></br>
-        <br></br>
-
-        <br />
-        <NavLink to="/output">
-          {" "}
-          <button onClick={submitHandler}>Submit</button>
-        </NavLink>
+  <option value = "--">--</option>
+   <option value = "High">By car or another motor vehicle</option>
+   <option value = "Medium">When traveling short distances I try to use a bike or I will walk</option>
+   <option value = "FairlyLow">I don't own a motor vehicle, so I use the train, bus or bycicle</option>
+   <option value = "FLow">I always walk or use a bike</option>
+  </select>
+<br></br>
+<br></br>
+ 
+      <br />
+      {filledIn ? <NavLink to="/output"> <button onClick={submitHandler}>Submit</button></NavLink> : null }
       </div>
-    </div>
   );
 };
-
 export default InputPage;
