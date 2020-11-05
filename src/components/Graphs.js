@@ -1,20 +1,9 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
 import { useSelector } from "react-redux";
 
-import WorldMap from "./WorldMap";
 import { selectLocationIncome } from "../store/form/selectors";
 
-import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
 
 import "../styles/OutputPage.css";
 
@@ -22,9 +11,6 @@ const Graphs = () => {
   const { selectedLocation, monthlyIncome, countryIncome } = useSelector(
     selectLocationIncome
   );
-
-  const [viewSources, set_viewSources] = useState(false);
-
 
   const countryData = [
     {
@@ -63,7 +49,7 @@ const Graphs = () => {
           <Legend />
           <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
-            name={`average monthly income in ${location}`}
+            name={`average monthly income in ${selectedLocation}`}
             dataKey="countryIncome"
             fill="#00acc2"
           />
@@ -95,9 +81,6 @@ const Graphs = () => {
           />
         </BarChart>
       </div>
-      {!countryIncome ? (
-        <div>Sorry, it apears we do not have data for that country</div>
-      ) : null}
     </div>
   );
 };
