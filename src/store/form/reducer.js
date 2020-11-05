@@ -1,18 +1,33 @@
 import { POST_USERINPUT, REFRESH_COUNTRY } from "./actions";
+import { income } from "../../constants/Income";
 
 const initialState = {
   selectedLocation: null,
   monthlyIncome: null,
+  countryIncome: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case POST_USERINPUT:
-      console.log("STORED:", action.payload);
-      return { ...state, ...action.payload };
+      const foundIncome = income.find((countryData) => {
+        return countryData.name === action.payload.selectedLocation;
+      });
+      return { ...state, ...action.payload, countryIncome: foundIncome.income };
+
     case REFRESH_COUNTRY:
-      console.log("STORED", action.payload);
-      return { ...state, selectedLocation: action.payload };
+      const foundCountry = income.find((country) => {
+        return country.code === action.payload;
+      });
+      // foundCountry
+      return foundCountry
+        ? {
+            ...state,
+            selectedLocation: foundCountry.name,
+            countryIncome: foundCountry.income,
+          }
+        : { ...state, countryIncome: null };
+
     default:
       return state;
   }

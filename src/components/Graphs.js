@@ -19,8 +19,9 @@ import {
 import "../styles/OutputPage.css";
 
 const Graphs = () => {
-  const { selectedLocation, monthlyIncome } = useSelector(selectLocationIncome);
-  console.log("SELECTED:", selectedLocation, monthlyIncome);
+  const { selectedLocation, monthlyIncome, countryIncome } = useSelector(
+    selectLocationIncome
+  );
 
   const [viewSources, set_viewSources] = useState(false);
   const [location, set_location] = useState(selectedLocation);
@@ -29,7 +30,7 @@ const Graphs = () => {
     {
       name: "",
       userIncome: monthlyIncome,
-      countryIncome: 100,
+      countryIncome: countryIncome,
     },
   ];
 
@@ -56,9 +57,9 @@ const Graphs = () => {
             bottom: 5,
           }}
         >
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
+          <XAxis stroke="white" dataKey="name" />
+          <YAxis stroke="white" />
+          <Tooltip cursor={{ fill: "#1b3150" }} />
           <Legend />
           <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
@@ -82,9 +83,9 @@ const Graphs = () => {
             bottom: 5,
           }}
         >
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
+          <XAxis stroke="white" dataKey="name" />
+          <YAxis stroke="white" />
+          <Tooltip cursor={{ fill: "#1b3150" }} />
           <Legend />
           <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
@@ -94,6 +95,9 @@ const Graphs = () => {
           />
         </BarChart>
       </div>
+      {!countryIncome ? (
+        <div>Sorry, it apears we do not have data for that country</div>
+      ) : null}
       <div>
         <div
           onMouseEnter={() => {
@@ -104,7 +108,6 @@ const Graphs = () => {
           }}
           style={{ height: 10, width: 10 }}
         >
-          {/* <WorldMap /> */}
           <div style={{ width: 250, height: 50, textAlign: "center" }}>
             {viewSources ? (
               <div>

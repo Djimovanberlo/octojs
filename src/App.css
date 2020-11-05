@@ -74,6 +74,7 @@ html {
   }
 }
 
+
 .fromLeft {
   -webkit-animation: moveFromLeft 1.5s ease both;
   animation: moveFromLeft 1.5s ease both;

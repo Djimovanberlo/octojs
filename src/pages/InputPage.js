@@ -5,7 +5,9 @@ import { NavLink } from 'react-router-dom'
 
 import { useDispatch } from "react-redux";
 import { postUserInput } from "../store/form/actions";
-import { useHistory} from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
+
+import { income } from "../constants/Income";
 
 const InputPage = () => {
   const dispatch = useDispatch();
@@ -27,23 +29,34 @@ const InputPage = () => {
   //background for the slides <a href="https://www.freepik.com/vectors/tree">Tree vector created by pch.vector - www.freepik.com</a>
 
   return (
+    <div className="divIn">
+      <h1>Please fill in the form</h1>
+      <br></br>
+      <h2>What country are you from?</h2>
+
 
     <div class="fromLeft">
   <h1>Please fill in the form</h1>
 <br></br>
 <h2>What country are you from?</h2>
-  
         <select
-          onChange={(event) => setSelectedLocation(event.target.value)}
-          className="select"
-        >
-   <option value = "Belgium">Belgium</option>
-   <option value = "Netherlands">Netherlands</option>
-   <option value = "Russia">Russia</option>
-   <option value = "Germany">Germany</option>
-   <option value = "France">France</option>
-   <option value = "US">US</option>
-  </select>
+        onChange={(event) => setSelectedLocation(event.target.value)}
+        className="select"
+      >
+        <option value="" selected disabled hidden>
+          Select your country
+        </option>
+        {income
+          .sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0))
+          .map((country, index) => {
+            return (
+              <option key={index} value={country.name}>
+                {country.name}
+              </option>
+            );
+          })}
+      </select>
+
   <h2>What is your monthly income?</h2>
   <input type= "number" onChange={(event) => setSelectedMonthlyIncome(event.target.value)}></input>
  <br></br>
@@ -82,7 +95,6 @@ const InputPage = () => {
 <br></br>
 <br></br>
  
-  {/* <button onClick={history.push("/")}>Back to start</button> */}
       <br />
       <NavLink to="/output"> <button onClick={submitHandler}>Submit</button></NavLink>
     </div>
