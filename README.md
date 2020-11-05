@@ -17,6 +17,10 @@ Welcome to the github of our project "How well off are you?" This project was bu
 - [Recharts](https://recharts.org/en-US/)
 - [Highcharts](https://www.highcharts.com/)
 
+### Notes
+
+Note that the data for income around the world we use might not be accurate. Consume with a grain of salt.
+
 <p>&nbsp;</p>
 
 ### ---Standard React README below---
