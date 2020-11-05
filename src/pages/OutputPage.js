@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 import Graphs from "../components/Graphs";
 import WorldMap from "../components/WorldMap";
+import Wasteful from "../components/Wasteful"
 import "../styles/OutputPage.css";
 
 const OutputPage = () => {
@@ -12,6 +13,7 @@ const OutputPage = () => {
     <div class="fromDown">
       <Graphs />
       <WorldMap />
+      <Wasteful/>
     </div>
   );
 };
