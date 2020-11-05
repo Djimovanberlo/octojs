@@ -4,13 +4,15 @@ import { useState } from "react";
 
 import { useDispatch } from "react-redux";
 import { postUserInput } from "../store/form/actions";
-import { useHistory, NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import { income } from "../constants/Income";
 
 const InputPage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  var filledIn = false
+ 
 
   const [selectedLocation, setSelectedLocation] = useState("");
   const [monthlyIncome, setSelectedMonthlyIncome] = useState("");
@@ -18,22 +20,20 @@ const InputPage = () => {
   const [useOfPlastic, setSelectedUseOfPlastic] = useState("");
   const [useOfVehicle, setSelectedUseOfVehicles] = useState("");
 
+  if(selectedLocation !="" & monthlyIncome !="" & meatIntake !="" & useOfPlastic !="" & useOfVehicle !="") {
+    filledIn =true
+  }
+  
+
   function submitHandler(event) {
     console.log("Submitted")
     dispatch(postUserInput({selectedLocation, monthlyIncome, meatIntake, useOfPlastic, useOfVehicle}));
 
-    // history.push("/output")
+    
   }
 
-  //background for the slides <a href="https://www.freepik.com/vectors/tree">Tree vector created by pch.vector - www.freepik.com</a>
-
   return (
-    <div className="divIn">
-      <h1>Please fill in the form</h1>
-      <br></br>
-      <h2>What country are you from?</h2>
-
-
+    
     <div class="fromLeft">
   <h1>Please fill in the form</h1>
 <br></br>
@@ -95,10 +95,8 @@ const InputPage = () => {
 <br></br>
  
       <br />
-      <NavLink to="/output"> <button onClick={submitHandler}>Submit</button></NavLink>
-    </div>
-    </div>
+      {filledIn ? <NavLink to="/output"> <button onClick={submitHandler}>Submit</button></NavLink> : null }
+      </div>
   );
 };
-
 export default InputPage;
