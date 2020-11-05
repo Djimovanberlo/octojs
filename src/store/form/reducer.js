@@ -7,7 +7,7 @@ const initialState = {
   countryIncome: null,
 };
 
-export default (state = initialState, action) => {
+export default function (state = initialState, action) {
   switch (action.type) {
     case POST_USERINPUT:
       const foundIncome = income.find((countryData) => {
@@ -31,4 +31,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-};
+}
