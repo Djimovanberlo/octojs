@@ -93,7 +93,7 @@ export default function WorldMap() {
   //   const [options, setOptions] = useState(chart);
 
   return (
-    <div id="container">
+    <div id="container" class="fadeIn">
       {/* <Country clickedCountry={country} category={category} /> */}
       <HighchartsReact
         highcharts={Highcharts}

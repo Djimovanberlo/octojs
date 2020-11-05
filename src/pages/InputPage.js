@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { useState } from "react";
+import { NavLink } from 'react-router-dom'
 
 import { useDispatch } from "react-redux";
 import { postUserInput } from "../store/form/actions";
@@ -27,7 +28,7 @@ const InputPage = () => {
 
   return (
 
-    <div class="divIn">
+    <div class="fromLeft">
   <h1>Please fill in the form</h1>
 <br></br>
 <h2>What country are you from?</h2>
