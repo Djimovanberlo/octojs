@@ -5,7 +5,7 @@ import charities from "../donationsData";
 
 function DonationsPage() {
   return (
-    <div className="donation_parent">
+    <div className="donation_parent" class="fromUp">
       <div className="donation_div1">
         <h1>World poverty Facts</h1>
       </div>
