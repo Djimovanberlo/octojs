@@ -81,10 +81,10 @@ const InputPage = () => {
   </select>
 <br></br>
 <br></br>
-  <button onClick={submitHandler}>Submit</button>
+ 
   {/* <button onClick={history.push("/")}>Back to start</button> */}
       <br />
-      <NavLink to="/output">GO TO OUPUT</NavLink>
+      <NavLink to="/output"> <button onClick={submitHandler}>Submit</button></NavLink>
     </div>
   );
 };
