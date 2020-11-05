@@ -63,7 +63,7 @@ const Graphs = () => {
           <Legend />
           <Bar name="your monthly income" dataKey="userIncome" fill="#f4a64f" />
           <Bar
-            name={`average monthly income in ${location}`}
+            name={`average monthly income in ${selectedLocation}`}
             dataKey="countryIncome"
             fill="#00acc2"
           />
