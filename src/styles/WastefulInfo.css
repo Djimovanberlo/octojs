@@ -1,4 +1,4 @@
-.wasteful_parent {
+/* .wasteful_parent {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr repeat(3, 1.5fr);
     grid-template-rows: repeat(2, 1fr) repeat(2, 2fr) 0fr;
@@ -34,13 +34,12 @@
   }
   
   .wasteful_div4 img {
-    /* display: block; */
     opacity: 0.9;
     padding: 10px;
     width: 250px;
     height: 250px;
     object-fit: cover;
-  }
+  } */
   
   /* .donation_div4 p {
     display: flex;
@@ -49,11 +48,11 @@
     justify-content: center;
   } */
   
-  .wasteful_div4 img:hover {
+  /* .wasteful_div4 img:hover {
     transform: scale(1.1);
   }
   
   .wasteful_div4 {
     cursor: pointer;
   }
-  
+   */

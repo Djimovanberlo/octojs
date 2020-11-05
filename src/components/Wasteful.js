@@ -1,9 +1,52 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "../styles/WastefulInfo.css";
 
 
 function WasteInfo() {
+
+    const [location, set_location] = useState(selectedLocation);
+
   return (
+    <div
+      onMouseEnter={() => {
+        set_viewSources(true);
+      }}
+      onMouseLeave={() => {
+        set_viewSources(false);
+      }}
+      style={{ height: 10, width: 10 }}
+    >
+      <div style={{ width: 250, height: 50, textAlign: "center" }}>
+        {viewSources ? (
+          <div>
+            <a
+              href="https://www.worlddata.info/average-income.php"
+              target="_blank"
+              style={{ cursor: "pointer" }}
+            >
+              average income per country
+            </a>
+            <br />
+            <a
+              href="https://news.gallup.com/poll/166211/worldwide-median-household-income-000.aspx"
+              target="_blank"
+              style={{ cursor: "pointer" }}
+            >
+              average income in the world
+            </a>
+          </div>
+        ) : (
+          <div>View sources</div>
+        )}
+      </div>
+      <div style={{ width: 250, height: 50, textAlign: "center" }}>
+        <NavLink to="/input">Change input</NavLink>
+        <br />
+        <NavLink to="/donations">More info</NavLink>
+      </div>
+    </div>
     <div className="wasteful_parent">
       <div className="wasteful_div1">
         <h1>Animal-based food facts</h1>
@@ -96,10 +139,6 @@ function WasteInfo() {
         of grain and reduce pressure on land.” 
         </li>
       </ul>
-      <div className="wasteful_div3">
-        <h1>Donate</h1>
-        <p>and make the world a better place</p>
-      </div>
     </div>
   );
 }

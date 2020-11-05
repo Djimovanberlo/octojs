@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { useState } from "react";
-import { NavLink } from 'react-router-dom'
 
 import { useDispatch } from "react-redux";
 import { postUserInput } from "../store/form/actions";
@@ -97,6 +96,7 @@ const InputPage = () => {
  
       <br />
       <NavLink to="/output"> <button onClick={submitHandler}>Submit</button></NavLink>
+    </div>
     </div>
   );
 };
