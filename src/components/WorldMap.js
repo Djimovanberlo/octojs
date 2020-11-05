@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
 import highchartsMap from "highcharts/modules/map";
 import mapData from "@highcharts/map-collection/custom/world.geo.json";
-// import * as Exporting from "highcharts/modules/exporting";
 import "../styles/WorldMap.css";
-// import Country from "../Game/Country";
 import { data } from "../constants/data";
 import { refreshCountry } from "../store/form/actions";
+import { useSelector } from "react-redux";
+
+import { selectLocationIncome } from "../store/form/selectors";
 
 highchartsMap(Highcharts);
 
@@ -53,7 +54,6 @@ const chart = {
 
   series: [
     {
-      // Use the gb-all map with no data as a basemap
       data: data,
       name: "Country",
       mapData: mapData,
@@ -72,8 +72,7 @@ const chart = {
 };
 
 export default function WorldMap() {
-  // const [country, set_Country] = useState("");
-  // console.log("THIS COUNTRY", country);
+  const { countryIncome } = useSelector(selectLocationIncome);
 
   const dispatch = useDispatch();
 
@@ -82,24 +81,21 @@ export default function WorldMap() {
   };
 
   chart.plotOptions["series"]["point"]["events"]["click"] = (event) => {
-    // set_Country(event.point["hc-key"].toUpperCase());
     sumbitCountry(event.point["hc-key"]);
   };
 
-  //   if (category === "country") {
-  //     chart.tooltip["enabled"] = false;
-  //   }
-
-  //   const [options, setOptions] = useState(chart);
-
   return (
-    <div id="container" class="fadeIn">
-      {/* <Country clickedCountry={country} category={category} /> */}
+    <div id="container" className="fadeIn">
       <HighchartsReact
         highcharts={Highcharts}
         options={chart}
         constructorType={"mapChart"}
       />
+      {!countryIncome ? (
+        <div style={{ textAlign: "center" }}>
+          Sorry, it apears we do not have data for that country
+        </div>
+      ) : null}
     </div>
   );
 }
