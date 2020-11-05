@@ -19,6 +19,10 @@ Welcome to the github of our project "How well off are you?" This project was bu
 
 <p>&nbsp;</p>
 
+### Note
+
+Note that the data we use for income around the world may not be accurate
+
 ### ---Standard React README below---
 
 In the project directory, you can run:
