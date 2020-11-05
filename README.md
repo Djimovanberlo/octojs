@@ -1,6 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+### How well off are you?
 
-## Available Scripts
+Welcome to the github of our project "How well off are you?" This project was built with the [UN development goals](https://www.un.org/sustainabledevelopment/sustainable-development-goals/) in mind and gives users insight into how well off they are. The app also proposes tips and charities that users can use to make a difference. This project was built by:
+
+- [Demi Werkzam](https://github.com/demi-werkzam)
+- [Dmitry Titkov](https://github.com/Dmitry-Titkov)
+- [Wander Smits](https://github.com/WanderSmits)
+- [Djimo van Berlo](https://github.com/Djimovanberlo)
+
+[Check out the deployed site!](www.google.com)
+(not deployed yet)
+
+### Used technologies
+
+- [React](https://reactjs.org/)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [Recharts](https://recharts.org/en-US/)
+- [Highcharts](https://www.highcharts.com/)
+
+<p>&nbsp;</p>
+
+### ---Standard React README below---
 
 In the project directory, you can run:
 
@@ -33,7 +52,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
