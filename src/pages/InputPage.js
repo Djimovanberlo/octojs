@@ -17,11 +17,11 @@ const InputPage = () => {
   const [useOfVehicle, setSelectedUseOfVehicles] = useState("");
 
   if (
-    (selectedLocation != "") &
-    (monthlyIncome != "") &
-    (meatIntake != "") &
-    (useOfPlastic != "") &
-    (useOfVehicle != "")
+    (selectedLocation !== "") &
+    (monthlyIncome !== "") &
+    (meatIntake !== "") &
+    (useOfPlastic !== "") &
+    (useOfVehicle !== "")
   ) {
     filledIn = true;
   }

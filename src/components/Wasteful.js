@@ -3,8 +3,6 @@ import { NavLink } from "react-router-dom";
 import "../styles/WastefulInfo.css";
 
 function WasteInfo() {
-
-
   const [viewSources, set_viewSources] = useState(false);
 
   return (
@@ -74,61 +72,64 @@ function WasteInfo() {
         <h1> Polution facts</h1>
       </div>
       <div>
-      <ul className="wasteful_div6">
-      <li style={{ padding: "1em" }}>
-        You see it every time that smoke billows from your car's exhaust pipe, 
-        so there's no denying that vehicles are major contributors to air pollution. 
-        Air pollution refers to the presence of foreign substances in the air that 
-        don’t belong there, or excessive amounts of certain impurities that wouldn't 
-        harm us otherwise. When cars burn gasoline, they emit pollutants. Gasoline 
-        fumes escape into the air even when we pump gasoline into our fuel tanks.
-        </li>
-        <li style={{ padding: "1em" }}>
-        Cars consume a lot of energy before they ever make it to the open road. 
-        Automotive production leaves a giant footprint because materials like 
-        steel, rubber, glass, plastics, paints, and many more must be 
-        created before a new ride is ready to roll.
-        </li>
-      </ul>
-    </div>
-    <div
-      onMouseEnter={() => {
-        set_viewSources(true);
-      }}
-      onMouseLeave={() => {
-        set_viewSources(false);
-      }}
-      style={{ display: "flex", padding: "5rem" }}
-    >
-      <div style={{ width: 250, height: 50, textAlign: "center" }}>
-        {viewSources ? (
-          <div>
-            <a
-              href="https://www.worlddata.info/average-income.php"
-              target="_blank"
-              style={{ cursor: "pointer" }}
-            >
-              average income per country
-            </a>
-            <br />
-            <a
-              href="https://news.gallup.com/poll/166211/worldwide-median-household-income-000.aspx"
-              target="_blank"
-              style={{ cursor: "pointer" }}
-            >
-              average income in the world
-            </a>
-          </div>
-        ) : (
-          <div>View sources</div>
-        )}
+        <ul className="wasteful_div6">
+          <li style={{ padding: "1em" }}>
+            You see it every time that smoke billows from your car's exhaust
+            pipe, so there's no denying that vehicles are major contributors to
+            air pollution. Air pollution refers to the presence of foreign
+            substances in the air that don’t belong there, or excessive amounts
+            of certain impurities that wouldn't harm us otherwise. When cars
+            burn gasoline, they emit pollutants. Gasoline fumes escape into the
+            air even when we pump gasoline into our fuel tanks.
+          </li>
+          <li style={{ padding: "1em" }}>
+            Cars consume a lot of energy before they ever make it to the open
+            road. Automotive production leaves a giant footprint because
+            materials like steel, rubber, glass, plastics, paints, and many more
+            must be created before a new ride is ready to roll.
+          </li>
+        </ul>
       </div>
-      <div style={{ width: 250, height: 50, textAlign: "center" }}>
-        <NavLink to="/input">Change input</NavLink>
-        <br />
-        <NavLink to="/donations">More info</NavLink>
+      <div
+        onMouseEnter={() => {
+          set_viewSources(true);
+        }}
+        onMouseLeave={() => {
+          set_viewSources(false);
+        }}
+        style={{ display: "flex", padding: "5rem" }}
+      >
+        <div style={{ width: 250, height: 50, textAlign: "center" }}>
+          {viewSources ? (
+            <div>
+              <a
+                href="https://www.worlddata.info/average-income.php"
+                target="_blank"
+                rel="noreferrer"
+                style={{ cursor: "pointer" }}
+              >
+                average income per country
+              </a>
+              <br />
+              <a
+                href="https://news.gallup.com/poll/166211/worldwide-median-household-income-000.aspx"
+                target="_blank"
+                rel="noreferrer"
+                style={{ cursor: "pointer" }}
+              >
+                average income in the world
+              </a>
+            </div>
+          ) : (
+            <div>View sources</div>
+          )}
+        </div>
+        <div style={{ width: 250, height: 50, textAlign: "center" }}>
+          <NavLink to="/input">Change input</NavLink>
+          <br />
+          <NavLink to="/donations">More info</NavLink>
+        </div>
       </div>
-    </div>
     </div>
   );
 }
