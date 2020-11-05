@@ -6,11 +6,9 @@ function Donations(props) {
     <div>
       {props.charities.map((charity) => {
         return (
-          <>
-            <a href={charity.donateLink} key={charity.name}>
-              <img src={charity.image} alt={""} />
-            </a>
-          </>
+          <a href={charity.donateLink} key={charity.name}>
+            <img src={charity.image} alt={""} />
+          </a>
         );
       })}
     </div>
