@@ -1,0 +1,59 @@
+.wasteful_parent {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr repeat(3, 1.5fr);
+    grid-template-rows: repeat(2, 1fr) repeat(2, 2fr) 0fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  
+  .wasteful_div1 {
+    text-align: center;
+    font-size: 1.35rem;
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .wasteful_div2 {
+    font-size: 1.35rem;
+    grid-area: 3 / 2 / 6 / 3;
+  }
+  .wasteful_div3 {
+    text-align: center;
+    font-size: 1.3rem;
+    grid-area: 2 / 5 / 3 / 6;
+  }
+  .wasteful_div4 {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    grid-area: 3 / 4 / 5 / 7;
+  }
+  .wasteful_div5 {
+    text-align: center;
+    font-size: 1.3rem;
+    grid-area: 2 / 5 / 3 / 6;
+  }
+  
+  .wasteful_div4 img {
+    /* display: block; */
+    opacity: 0.9;
+    padding: 10px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  /* .donation_div4 p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  } */
+  
+  .wasteful_div4 img:hover {
+    transform: scale(1.1);
+  }
+  
+  .wasteful_div4 {
+    cursor: pointer;
+  }
+  
